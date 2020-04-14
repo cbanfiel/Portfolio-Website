@@ -2,12 +2,16 @@ body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
-    /* margin-left: 300px; */
     font-family: 'Baloo 2', cursive;
 }
 
-main {
+p{
+    font-size: large;
+}
+
+main{
     flex: 1 0 auto;
+
 }
 
 .emu-green {
@@ -16,4 +20,15 @@ main {
 
 .icon {
     font-size: 24px;
+}
+
+.page{
+    height: 100vh;
+    padding-left: 300px;
+    padding-top: 30px;
+}
+
+.subheader{
+    font-size: larger !important;
+    color: black;
 }
