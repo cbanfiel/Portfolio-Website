@@ -3,10 +3,27 @@ body {
     min-height: 100vh;
     flex-direction: column;
     font-family: 'Baloo 2', cursive;
+    overflow: hidden;
 }
 
 p{
     font-size: large;
+}
+
+.button{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.navigationbuttons{
+    position: relative;
+    top: 20px;
+    width: 100%;
+    padding-left: 300px;
+    padding-right: 300px;
+    font-size: larger;
 }
 
 main{
@@ -28,7 +45,11 @@ main{
     padding-top: 30px;
 }
 
+.page_content{
+    height: 80vh;
+}
+
 .subheader{
     font-size: larger !important;
-    color: black;
 }
+
