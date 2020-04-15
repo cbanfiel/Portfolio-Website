@@ -30,12 +30,13 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
+	<link rel="stylesheet" type="text/css" href="full-page-scroll.css">
+
     <title>Document</title>
   </head>
 
   <body>
     <!-- NAVBAR -->
-
     <ul class="sidenav sidenav-fixed emu-green z-depth-0">
       <li>
         <div class="user-view">
@@ -66,32 +67,32 @@
       </li>
       <li><a class="subheader grey-text text-lighten-3">Shortcuts</a></li>
 
-      <li><a class="grey-text text-lighten-3" href="#home">Home</a></li>
+      <li><a class="grey-text text-lighten-3" href="#0">Home</a></li>
       <li>
-        <a class="grey-text text-lighten-3" href="#myprojects"
+        <a class="grey-text text-lighten-3" href="#1"
           >My Projects Intro</a
         >
       </li>
       <li>
-        <a class="grey-text text-lighten-3" href="#onpapersports"
+        <a class="grey-text text-lighten-3" href="#2"
           >On Paper Sports Series</a
         >
       </li>
       <li>
-        <a class="grey-text text-lighten-3" href="#makemeadrink"
+        <a class="grey-text text-lighten-3" href="#3"
           >Make Me A Drink</a
         >
       </li>
       <li>
-        <a class="grey-text text-lighten-3" href="#covid19michigan"
+        <a class="grey-text text-lighten-3" href="#4"
           >COVID-19 Michigan</a
         >
       </li>
       <li>
-        <a class="grey-text text-lighten-3" href="#aoliwebsite">AOLI Website</a>
+        <a class="grey-text text-lighten-3" href="#5">AOLI Website</a>
       </li>
       <li>
-        <a class="grey-text text-lighten-3" href="#javacollegefootball"
+        <a class="grey-text text-lighten-3" href="#6"
           >Java College Football GM Game</a
         >
       </li>
@@ -99,8 +100,8 @@
 
     <!-- BODY -->
 
-    <main class="grey lighten-4">
-      <section class="page scrollspy grey lighten-4" id="home">
+    <main class="grey lighten-4 scroll-container" id="main">
+      <section class="page scrollspy grey lighten-4 section1" id="home">
         <div class="container page_content">
           <h1>Welcome</h1>
           <p>
@@ -111,7 +112,7 @@
           <p>Lets get in touch! my email address is in the sidenav!</p>
         </div>
       </section>
-      <section class="page scrollspy grey lighten-2" id="myprojects">
+      <section class="page scrollspy grey lighten-2 section2" id="myprojects">
         <div class="container page_content">
           <h1>My Projects</h1>
           <p>Come check out some of my projects!</p>
@@ -131,7 +132,7 @@
           </ul>
         </div>
       </section>
-      <section class="page scrollspy grey lighten-4" id="onpapersports">
+      <section class="page scrollspy grey lighten-4 section3" id="onpapersports">
         <div class="container page_content">
           <h1>On Paper Sports Series</h1>
           <p>Languages/Frameworks: JavaScript/React Native</p>
@@ -271,48 +272,22 @@
         </div>
 
     </footer> -->
+    
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
-    <script>
-
-      M.AutoInit();
-      document.addEventListener("DOMContentLoaded", function () {
-        var elems = document.querySelectorAll(".scrollspy");
-        var instances = M.ScrollSpy.init(elems, { scrollOffset: 0 });
-
-        for (let i = 0; i < elems.length; i++) {
-          let nav = document.createElement("div");
-          nav.className = "navigationbuttons";
-          let next = null;
-          let prev = null;
-          if (i + 1 < elems.length) {
-            next = document.createElement("a");
-            next.className = "right";
-            next.id = elems[i].id + "next";
-            next.href = `#${elems[i + 1].id}`;
-            next.innerHTML = "Next Page ->";
-          }
-
-          if (i != 0) {
-            prev = document.createElement("a");
-            prev.className = "left";
-            prev.id = elems[i].id + "prev";
-            prev.href = `#${elems[i - 1].id}`;
-            prev.innerHTML = "<- Previous Page";
-          }
-
-          if (prev != null) {
-            nav.appendChild(prev);
-          }
-          if (next != null) {
-            nav.appendChild(next);
-          }
-
-          elems[i].appendChild(nav);
-        }
+    <script src="full-page-scroll.js"></script>
+    <script type="text/javascript">
+      new fullScroll({
+        mainElement: 'main',
+        displayDots: true,
+        dotsPosition: 'right',
+        animateTime: 0.7,
+        animateFunction: 'ease'
       });
-
+    </script>
+    <script>
+      M.AutoInit();
     </script>
   </body>
 </html>
